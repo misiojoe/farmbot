@@ -1,0 +1,11 @@
+type": "service_account",
+  "project_id": "farmbot-278108",
+  "private_key_id": "a31913008e6f49f92aa1609288df249fe9004eaa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCuah74S7OO8cvu\naRMBTy1I6clhcr7XsSQ2yifjkwGFh3vRcY7uvMnTMb6i672uWCDCDeX0i/bWsmVv\nLcHcuBJfzwLTLbt1V1u7XW9Fkv17sR0HVwlyey/jhG0rJsIi8por2IDTzVeCbyVH\n5Xp/iiOP2RERcwXP4P5jON4IHooIMPqqiyt2yesa3PHVDowZb06lGJ8BaOZXDm3W\ntgtZ+u4qwNONNKMqUh3hSAYQ9oywwOyA38w2aYXitQwsr5c1JOr/ow/Prui19Q2t\nqp+di6FmSwnsDyym/IqiUeidsX7gdBwqVIPNgRgEUgg1B6nmzMlZNxFeWnflejsY\ns/m3CeFXAgMBAAECggEACG2qZ3dJCwxWPYQoXfTUjGR3zdS8sjGmPVuRh+bPuQMu\nEZX6QUEwQ5twyfC4btdlZdtEFIg6+m8OhcvhRWhDwwt+6HOaTnZVQX2nZeZPh42s\niHFFTJn1W3pHyEEMOqIcnyfMOe//XZc/ZvUI8WbchxQHRh+X1U7bHDJgUGYhZ3nZ\n8cX+htsM4Ti9M9ZFI6A85SLvSiw8Vgttd9COChf4jKyxVROXWRHbgahwp2SJSF0v\ndy33AC+pK8n6RaGBZHQO1bY7IIXEJz27tqqDMP/unyei2RWKYi6P/0TrEDXiZPZD\n1ZC/DYHnk86DSZvbGFmBfFhsi4S/UBA+4O2yJGHW8QKBgQDnOPvPoqLtjIPK/UWN\n45dhun6AlUpWCU3jmVjFwtrr0XEgdap2c0vRu6TBhcUdFvHOloP3soagQyqRTPBW\n/c/kZLZK27giNrcvLdEys3NHscwZOD3lSxd9rgstOOAO67BQr1oN6doKyT/DG4vC\nI7W2H8RHC7H/V+ZuGyWotnLqOQKBgQDBGr/qWbk9ZIHbik7vqy7w7YaafkO0vKzG\ncO8wMqXmAUOS8Fd1K1PZ4zJmGmo1FdnM+LZZZLY/eUtswoDYbdvAioKl2hsYiuQR\nEaekuqLEpBDYO4F1S31oT01ArZKUqr+wVYFnE4JtXX/KtShtmxwZn05X3f3YRnq/\nPBMezF9oDwKBgHemNB/g4ACeusA6yVhAEmDe+YEeP8Y/sE97VcWYLGLlEW4jlV8Q\nEIbqW7pMt5BzBBPMLWPqvOGHgCqKLsBFPOPJ/c7E3gbOW4KNafibhabu6VePk+/o\nKLK/ckcnbEIsUiOeabJTdaIpO9aBlZOTmP8ydwXwll40pSgK4jTonJR5AoGAQbW1\niqx/cVmrKqa01697qLZa8GV46p6teFVjvxXtCAh0EyM/z3ov7Vv3gXEJpQjLdYlI\nm8C+l3jR5q+FIqC3f5xiesduIvrYQsqsLkzoKFvf84TEN8K5aO5bTmACGh7EXd+q\nygWEg2ymmLbui+WVOU7RXOsIfzj0efCaXQeUi5cCgYBaLNbstzokFt32HF7Uemng\n1Rqm3AlHWRMPDe0SAJ331uppPTXOGZLsSo5QLnCsgr3s31FRnwy6GMs9o4R1UgEs\n9MvgHIbJpyn/6mbaTrKVbaqyfLThWhPa1nK6NozcByFHNtiWPnLckZuVz8Oyp2+z\n0MCcC5oyvF9qVQb0/PeTpA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "farmbot@farmbot-278108.iam.gserviceaccount.com",
+  "client_id": "102965022448317307766",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/farmbot%40farmbot-278108.iam.gserviceaccount.com"
+}
