@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import sys
+import json
+import requests
+from datetime import datetime, date
+
+API_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ1bmtub3duIiwic3ViIjoxOTI3LCJpYXQiOjE1Njc1NDAxNTksImp0aSI6IjVkYmRkYjYwLThlOTctNGQzZS05NTFhLWY3YTQ1OWY4NjQ5YiIsImlzcyI6Ii8vbXkuZmFybS5ib3Q6NDQzIiwiZXhwIjoxNTcwOTk2MTU5LCJtcXR0IjoiY2xldmVyLW9jdG9wdXMucm1xLmNsb3VkYW1xcC5jb20iLCJib3QiOiJkZXZpY2VfMTkyNCIsInZob3N0IjoieGljb25mdW0iLCJtcXR0X3dzIjoid3NzOi8vY2xldmVyLW9jdG9wdXMucm1xLmNsb3VkYW1xcC5jb206NDQzL3dzL21xdHQiLCJvc191cGRhdGVfc2VydmVyIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9mYXJtYm90L2Zhcm1ib3Rfb3MvcmVsZWFzZXMvbGF0ZXN0IiwiYmV0YV9vc191cGRhdGVfc2VydmVyIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9GYXJtQm90L2Zhcm1ib3Rfb3MvcmVsZWFzZXMvMTQ1ODE4NzEifQ.ZWHIsq49W1I4TNKWQYMOxfjvKV4xUK4yK4YMQUtdrXMJTTQpDQT963LqjAg1_rq3Y-k1Fi-krt1VZ0SyjXbGxhk42B3IR6HMJxEKtPr25Q2dFghGV1tp1Axr_FnPISf2cC-AJV9zlI-FjEP4U1lEoA2HbFJZAHck0GPRaihwCoBDqKn-tD3VSKjIzp1hL4XmimmP9ie1tHRM_mCAA3hoS4llNSadbPuSLrJ-ECrR7evRw6_nn-h-ArcL0rpD1e-21xbmU_M_GaUSZTP6EPvVXqqjl11zeQy-f3bN_dyCCiw1ZOuRs1A1-mX3PYhMsd5vQsAIL55m6sfrLWA48PSSEg'
+
+def download_images(desired_date):
+    headers = {'Authorization': 'Bearer ' + API_TOKEN,
+               'content-type': "application/json"}
+    response = requests.get('https://my.farmbot.io/api/images', headers=headers)
+    images = response.json()
+
+    dates = set()
+    to_dowload = {}
+
+    for img in images:
+        creation_date = datetime.strptime(
+            img['created_at'], "%Y-%m-%dT%H:%M:%S.%fZ").date()
+        dates.add(creation_date)
+        if creation_date == desired_date:
+            name = img['meta']['name'].split('/')[-1] + '.jpg'
+            url = img['attachment_url']
+            to_dowload[name] = url
+
+    print("Images available for dates:")
+    for d in sorted(dates):
+        print(d)
+
+    print("\nDownloading images from " + str(desired_date))
+
+    for filename, url in to_dowload.items():
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(filename, 'wb') as f:
+                f.write(response.content)
+
+
+if __name__ == "__main__":
+    desired_date = date.today()
+    if len(sys.argv) > 1:
+        try:
+            desired_date = datetime.strptime(sys.argv[1], "%Y-%m-%d").date()
+        except:
+            print("Usage: {} [2019-08-31]".format(sys.argv[0]))
+            sys.exit(1)
+
+    download_images(desired_date)
